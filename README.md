@@ -1,4 +1,4 @@
-# gostorage
+# gostorage [![Go Report Card](https://goreportcard.com/badge/github.com/vincentserpoul/gostorage)](https://goreportcard.com/report/github.com/vincentserpoul/gostorage)
 
 init of different storage conn pool
 
