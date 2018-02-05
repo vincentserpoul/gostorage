@@ -13,7 +13,7 @@ func TestNewConnPool(t *testing.T) {
 		{
 			name: "Working connection",
 			redisConf: &Config{
-				Host:                 "localhost",
+				Host:                 "127.0.0.1",
 				Port:                 "6379",
 				Password:             "dev",
 				MaxActiveConnections: 256,
@@ -23,7 +23,7 @@ func TestNewConnPool(t *testing.T) {
 		{
 			name: "Non working password",
 			redisConf: &Config{
-				Host:                 "localhost",
+				Host:                 "127.0.0.1",
 				Port:                 "6379",
 				Password:             "deva",
 				MaxActiveConnections: 256,
@@ -33,7 +33,7 @@ func TestNewConnPool(t *testing.T) {
 		{
 			name: "Non working connection",
 			redisConf: &Config{
-				Host:                 "localhost",
+				Host:                 "127.0.0.1",
 				Port:                 "6378",
 				Password:             "dev",
 				MaxActiveConnections: 256,
