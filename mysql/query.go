@@ -21,12 +21,6 @@ type QueryFilter struct {
 	NamedParams map[string]interface{}
 }
 
-// SQLQueryFilter allows for select filters
-type SQLQueryFilter struct {
-	Filter      string
-	NamedParams map[string]interface{}
-}
-
 // SQLNamedQueryer is used to do select queries
 type SQLNamedQueryer interface {
 	NamedQueryContext(ctx context.Context, query string, arg interface{}) (
