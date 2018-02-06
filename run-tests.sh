@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# any subsequent error will exit
-set -e
-
 # --vendor flag doesn't seem to work
 gometalinter --exclude=vendor --deadline 5m  ./...
 
