@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/btcsuite/btcd"
   packages = ["btcec"]
-  revision = "50de9da05b50eb15658bb350f6ea24368a111ab7"
+  revision = "0ef0d8c59b58ccfc8ac814dd6dac3990d4a16be2"
 
 [[projects]]
   name = "github.com/ethereum/go-ethereum"
@@ -74,7 +74,7 @@
   branch = "master"
   name = "golang.org/x/net"
   packages = ["websocket"]
-  revision = "2fb46b16b8dda405028c50f7c7f0f9dd1fa6bfb1"
+  revision = "f5dfe339be1d06f81b22525fe34671ee7d2c8904"
 
 [[projects]]
   name = "gopkg.in/fatih/set.v0"
