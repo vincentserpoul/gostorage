@@ -7,12 +7,12 @@ import (
 func TestNewConnPool(t *testing.T) {
 	tests := []struct {
 		name      string
-		redisConf *Config
+		redisConf Config
 		wantErr   bool
 	}{
 		{
 			name: "Working connection",
-			redisConf: &Config{
+			redisConf: Config{
 				Host:                 "127.0.0.1",
 				Port:                 "6379",
 				Password:             "dev",
@@ -22,7 +22,7 @@ func TestNewConnPool(t *testing.T) {
 		},
 		{
 			name: "Non working password",
-			redisConf: &Config{
+			redisConf: Config{
 				Host:                 "127.0.0.1",
 				Port:                 "6379",
 				Password:             "deva",
@@ -32,7 +32,7 @@ func TestNewConnPool(t *testing.T) {
 		},
 		{
 			name: "Non working connection",
-			redisConf: &Config{
+			redisConf: Config{
 				Host:                 "127.0.0.1",
 				Port:                 "6378",
 				Password:             "dev",

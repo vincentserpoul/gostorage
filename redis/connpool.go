@@ -16,7 +16,7 @@ type Config struct {
 }
 
 // NewConnPool connects to redis and return a connection pool
-func NewConnPool(redisConf *Config) (*redis.Pool, error) {
+func NewConnPool(redisConf Config) (*redis.Pool, error) {
 	redPool := &redis.Pool{
 		MaxIdle:     3,
 		MaxActive:   redisConf.MaxActiveConnections,

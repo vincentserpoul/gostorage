@@ -10,12 +10,12 @@ func TestNewConnPool(t *testing.T) {
 
 	tests := []struct {
 		name        string
-		mysqlDBConf *Config
+		mysqlDBConf Config
 		wantErr     bool
 	}{
 		{
 			name: "Working connection",
-			mysqlDBConf: &Config{
+			mysqlDBConf: Config{
 				Protocol: "tcp",
 				Host:     "127.0.0.1",
 				Port:     "3306",
@@ -27,7 +27,7 @@ func TestNewConnPool(t *testing.T) {
 		},
 		{
 			name: "Non existing db",
-			mysqlDBConf: &Config{
+			mysqlDBConf: Config{
 				Protocol: "tcp",
 				Host:     "none",
 				Port:     "3306",

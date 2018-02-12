@@ -20,7 +20,7 @@ type Config struct {
 }
 
 // NewConnPool connects to db and return a connection pool
-func NewConnPool(mysqlDBConf *Config) (*sqlx.DB, error) {
+func NewConnPool(mysqlDBConf Config) (*sqlx.DB, error) {
 	dsn := mysqlDBConf.User + ":" +
 		mysqlDBConf.Password + "@" +
 		mysqlDBConf.Protocol + "(" +
