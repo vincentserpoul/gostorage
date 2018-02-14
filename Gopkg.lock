@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/btcsuite/btcd"
   packages = ["btcec"]
-  revision = "0ef0d8c59b58ccfc8ac814dd6dac3990d4a16be2"
+  revision = "9866016012e7992f394888a4e65ec4315dfa8d49"
 
 [[projects]]
   name = "github.com/ethereum/go-ethereum"
@@ -19,14 +19,16 @@
     "crypto/secp256k1",
     "crypto/sha3",
     "ethclient",
+    "ethdb",
     "log",
+    "metrics",
     "params",
     "rlp",
     "rpc",
     "trie"
   ]
-  revision = "4bb3c89d44e372e6a9ab85a8be0c9345265c763a"
-  version = "v1.7.3"
+  revision = "5f54075760748ae7f249bf735565924ea885c477"
+  version = "v1.8.0"
 
 [[projects]]
   name = "github.com/garyburd/redigo"
@@ -35,7 +37,7 @@
     "redis"
   ]
   revision = "d1ed5c67e5794de818ea85e6b522fda02623a484"
-  version = "v1.4.0"
+  version = "v1.5.0"
 
 [[projects]]
   name = "github.com/go-sql-driver/mysql"
@@ -51,6 +53,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/golang/snappy"
+  packages = ["."]
+  revision = "553a641470496b2327abcac10b36396bd98e45c9"
+
+[[projects]]
+  branch = "master"
   name = "github.com/jmoiron/sqlx"
   packages = [
     ".",
@@ -61,7 +69,10 @@
 [[projects]]
   branch = "master"
   name = "github.com/rcrowley/go-metrics"
-  packages = ["."]
+  packages = [
+    ".",
+    "exp"
+  ]
   revision = "8732c616f52954686704c8645fe1a9d59e9df7c1"
 
 [[projects]]
@@ -69,6 +80,25 @@
   packages = ["."]
   revision = "7af7a1e09ba336d2ea14b1ce73bf693c6837dbf6"
   version = "v1.2"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/syndtr/goleveldb"
+  packages = [
+    "leveldb",
+    "leveldb/cache",
+    "leveldb/comparer",
+    "leveldb/errors",
+    "leveldb/filter",
+    "leveldb/iterator",
+    "leveldb/journal",
+    "leveldb/memdb",
+    "leveldb/opt",
+    "leveldb/storage",
+    "leveldb/table",
+    "leveldb/util"
+  ]
+  revision = "211f780988068502fe874c44dae530528ebd840f"
 
 [[projects]]
   branch = "master"
