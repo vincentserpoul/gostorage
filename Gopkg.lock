@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/btcsuite/btcd"
   packages = ["btcec"]
-  revision = "9866016012e7992f394888a4e65ec4315dfa8d49"
+  revision = "1cd648d7842a04376ce45765c0d5e4415be41b9b"
 
 [[projects]]
   name = "github.com/ethereum/go-ethereum"
@@ -104,7 +104,7 @@
   branch = "master"
   name = "golang.org/x/net"
   packages = ["websocket"]
-  revision = "f5dfe339be1d06f81b22525fe34671ee7d2c8904"
+  revision = "136a25c244d3019482a795d728110278d6ba09a4"
 
 [[projects]]
   name = "gopkg.in/fatih/set.v0"
@@ -127,6 +127,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "76e1efa4215f9b8bfa46b541c4045a120b630fda27eea45009019fe5c35885a9"
+  inputs-digest = "df6b76548e2218877b03a7e3933aebdc6772d783b8e725a9e587ade3644e8aea"
   solver-name = "gps-cdcl"
   solver-version = 1
