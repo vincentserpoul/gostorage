@@ -27,8 +27,8 @@
     "rpc",
     "trie"
   ]
-  revision = "5f54075760748ae7f249bf735565924ea885c477"
-  version = "v1.8.0"
+  revision = "1e67410e88d2685bc54611a7c9f75c327b553ccc"
+  version = "v1.8.1"
 
 [[projects]]
   name = "github.com/garyburd/redigo"
@@ -104,7 +104,7 @@
   branch = "master"
   name = "golang.org/x/net"
   packages = ["websocket"]
-  revision = "136a25c244d3019482a795d728110278d6ba09a4"
+  revision = "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb"
 
 [[projects]]
   name = "gopkg.in/fatih/set.v0"
