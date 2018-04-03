@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   percona:
-    image: percona:5.7.20
+    image: percona:5.7.21
     command:
       - "mysqld"
       - "--max-connections=1000"
@@ -41,7 +41,7 @@ services:
       - redisdata:/data
 
   parity:
-    image: parity/parity:v1.9.2
+    image: parity/parity:v1.9.5
     command:
       - "--config=dev"
       - "--ui-port=8186"

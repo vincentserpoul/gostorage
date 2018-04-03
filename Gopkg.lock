@@ -27,8 +27,8 @@
     "rpc",
     "trie"
   ]
-  revision = "b8b9f7f4476a30a0aaf6077daade6ae77f969960"
-  version = "v1.8.2"
+  revision = "329ac18ef617d0238f71637bffe78f028b0f13f7"
+  version = "v1.8.3"
 
 [[projects]]
   name = "github.com/garyburd/redigo"
@@ -89,13 +89,13 @@
     "leveldb/table",
     "leveldb/util"
   ]
-  revision = "c7a14d4b00e222eab6111b4cd1af829c13f53ec2"
+  revision = "714f901b98fdb3aa954b4193d8cbd64a28d80cad"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["websocket"]
-  revision = "22ae77b79946ea320088417e4d50825671d82d57"
+  revision = "b68f30494add4df6bd8ef5e82803f308e7f7c59c"
 
 [[projects]]
   name = "gopkg.in/fatih/set.v0"
