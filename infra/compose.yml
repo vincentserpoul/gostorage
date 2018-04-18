@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.6"
 
 services:
   percona:
@@ -24,7 +24,7 @@ services:
       - mysqldata:/var/lib/mysql
 
   redis:
-    image: redis:4.0.8-alpine
+    image: redis:4.0.9-alpine
     command:
       - "redis-server"
       - "--appendonly yes"
@@ -41,7 +41,7 @@ services:
       - redisdata:/data
 
   parity:
-    image: parity/parity:v1.9.5
+    image: parity/parity:v1.10.1
     command:
       - "--config=dev"
       - "--ui-port=8186"
@@ -64,12 +64,45 @@ services:
     volumes:
       - chaindata:/root/.local/share/io.parity.ethereum
 
+  postgres:
+    image: postgres:10.3-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=internal
+      - POSTGRES_PASSWORD=dev
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels: [DB=POSTGRES]
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+
+  cockroachdb:
+    image: cockroachdb/cockroach:v2.0.0
+    command:
+    - start
+    - --insecure
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels: [DB=COCKROACHDB]
+    volumes:
+      - cockroachdata:/cockroach/cockroach-data
+
 volumes:
   mysqldata:
     driver: local
   redisdata:
     driver: local
   chaindata:
+    driver: local
+  postgresdata:
+    driver: local
+  cockroachdata:
     driver: local
 # Usage
 # docker stack deploy --compose-file=infra/local/compose.yml storage;

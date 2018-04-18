@@ -67,6 +67,15 @@
   revision = "2aeb6a910c2b94f2d5eb53d9895d80e27264ec41"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid"
+  ]
+  revision = "d34b9ff171c21ad295489235aec8b6626023cd04"
+
+[[projects]]
   name = "github.com/rs/cors"
   packages = ["."]
   revision = "feef513b9575b32f84bafa580aad89b011259019"
@@ -118,6 +127,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "df6b76548e2218877b03a7e3933aebdc6772d783b8e725a9e587ade3644e8aea"
+  inputs-digest = "6d59b94a6debe62b79f27c187b70bcb2293acb4b59296acb0a2247b16d593de6"
   solver-name = "gps-cdcl"
   solver-version = 1
