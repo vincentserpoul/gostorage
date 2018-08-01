@@ -2,7 +2,7 @@ version: "3.6"
 
 services:
   percona:
-    image: percona:5.7.21
+    image: percona:5.7.22
     command:
       - "mysqld"
       - "--max-connections=1000"
@@ -24,7 +24,7 @@ services:
       - mysqldata:/var/lib/mysql
 
   redis:
-    image: redis:4.0.9-alpine
+    image: redis:4.0.10-alpine
     command:
       - "redis-server"
       - "--appendonly yes"
@@ -41,7 +41,7 @@ services:
       - redisdata:/data
 
   parity:
-    image: parity/parity:v1.10.1
+    image: parity/parity:v2.0.1-beta
     command:
       - "--config=dev"
       - "--ui-port=8186"
@@ -65,7 +65,7 @@ services:
       - chaindata:/root/.local/share/io.parity.ethereum
 
   postgres:
-    image: postgres:10.3-alpine
+    image: postgres:10.4-alpine
     ports:
       - "5432:5432"
     environment:
@@ -79,7 +79,7 @@ services:
       - postgresdata:/var/lib/postgresql/data
 
   cockroachdb:
-    image: cockroachdb/cockroach:v2.0.0
+    image: cockroachdb/cockroach:v2.0.3
     command:
     - start
     - --insecure
@@ -105,7 +105,7 @@ volumes:
   cockroachdata:
     driver: local
 # Usage
-# docker stack deploy --compose-file=infra/local/compose.yml storage;
+# docker stack deploy --compose-file=infra/compose.yml storage;
 
 # To create your own DB, for example dev
 # CONTAINER_NAME=$(docker container ls --format '{{.Names}}' | grep percona) && docker exec -i $CONTAINER_NAME mysql -u root -e "DROP DATABASE IF EXISTS dev;CREATE DATABASE dev;GRANT ALL PRIVILEGES ON dev.* TO 'internal'@'%';";
