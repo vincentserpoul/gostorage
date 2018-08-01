@@ -21,7 +21,7 @@ func Exists(rp *redis.Pool, key string) (bool, error) {
 		return false, fmt.Errorf("Exists GET(%s): %v", key, err)
 	}
 	if rawBytes == nil {
-		return false, fmt.Errorf("Exists content(%s): %v", key, err)
+		return false, nil
 	}
 
 	return true, nil
