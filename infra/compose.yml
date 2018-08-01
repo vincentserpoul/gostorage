@@ -41,13 +41,11 @@ services:
       - redisdata:/data
 
   parity:
-    image: parity/parity:v2.0.1-beta
+    image: parity/parity:v2.0.1
     command:
       - "--config=dev"
-      - "--ui-port=8186"
       - "--jsonrpc-port=8645"
       - "--ws-port=8646"
-      - "--unsafe-expose"
       - "--reseal-min-period=0"
       - "--gasprice=0"
       - "--base-path=/root/.local/share/io.parity.ethereum"
