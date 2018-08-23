@@ -4,23 +4,9 @@ init of different storage conn pool
 
 ## Prerequisites
 
-* [go](https://golang.org/dl/) (tested on 1.9.3)
+* [go](https://golang.org/dl/) (tested on 1.10.3)
 * [gometalinter](https://github.com/alecthomas/gometalinter)
-* [dep](github.com/golang/dep/cmd/dep)
 * [docker](https://www.docker.com/get-docker)
-
-## dep issue
-
-It seems there are still some issues with dep and cgo deps.
-dep ensure and running the go-ethereum package test leads to this error.
-
-```bash
-# github.com/vincentserpoul/gostorage/vendor/github.com/ethereum/go-ethereum/crypto/secp256k1
-vendor/github.com/ethereum/go-ethereum/crypto/secp256k1/curve.go:44:10: fatal error: 'libsecp256k1/include/secp256k1.h' file not found
-#include "libsecp256k1/include/secp256k1.h"
-         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-```
-
 
 ## Run tests
 
