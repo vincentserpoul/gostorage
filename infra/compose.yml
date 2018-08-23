@@ -24,7 +24,7 @@ services:
       - mysqldata:/var/lib/mysql
 
   redis:
-    image: redis:4.0.10-alpine
+    image: redis:4.0.11-alpine
     command:
       - "redis-server"
       - "--appendonly yes"
@@ -44,17 +44,17 @@ services:
     image: parity/parity:v2.0.1
     command:
       - "--config=dev"
+      - "--port=30304"
       - "--jsonrpc-port=8645"
       - "--ws-port=8646"
       - "--reseal-min-period=0"
-      - "--gasprice=0"
+      - "--min-gas-price=0"
+      - "--unsafe-expose"
       - "--base-path=/root/.local/share/io.parity.ethereum"
     ports:
-      - "8186:8186"
       - "8645:8645"
       - "8646:8646"
-      - "8666:8666"
-      - "30303:30303"
+      - "30304:30304"
     deploy:
       mode: replicated
       replicas: 1
@@ -63,7 +63,7 @@ services:
       - chaindata:/root/.local/share/io.parity.ethereum
 
   postgres:
-    image: postgres:10.4-alpine
+    image: postgres:10.5-alpine
     ports:
       - "5432:5432"
     environment:
@@ -77,10 +77,10 @@ services:
       - postgresdata:/var/lib/postgresql/data
 
   cockroachdb:
-    image: cockroachdb/cockroach:v2.0.3
+    image: cockroachdb/cockroach:v2.0.5
     command:
-    - start
-    - --insecure
+      - start
+      - --insecure
     ports:
       - "26257:26257"
       - "8080:8080"
