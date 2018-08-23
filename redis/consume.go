@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/garyburd/redigo/redis"
+	"github.com/gomodule/redigo/redis"
 )
 
 // Consume will check if a key exists and if it exists, will destroy it
