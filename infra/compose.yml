@@ -41,7 +41,7 @@ services:
       - redisdata:/data
 
   parity:
-    image: parity/parity:v2.0.1
+    image: parity/parity:v2.0.3
     command:
       - "--config=dev"
       - "--port=30304"
