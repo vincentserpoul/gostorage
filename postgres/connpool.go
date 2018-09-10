@@ -16,6 +16,14 @@ type Config struct {
 	User     string
 	Password string
 	DbName   string
+	SSLConf
+}
+
+// SSLConf Represent the ssl configuration
+type SSLConf struct {
+	SSLCertPath     string
+	SSLKeyPath      string
+	SSLRootCertPath string
 }
 
 // NewConnPool connects to db and return a connection pool
@@ -25,7 +33,21 @@ func NewConnPool(postgresDBConf Config) (*sqlx.DB, error) {
 		postgresDBConf.Password + "@" +
 		postgresDBConf.Host + ":" +
 		postgresDBConf.Port + "/" +
-		postgresDBConf.DbName + "?sslmode=disable"
+		postgresDBConf.DbName
+
+	// Secure connection?
+	ssl := "?sslmode=disable"
+	if postgresDBConf.SSLConf.SSLCertPath != "" &&
+		postgresDBConf.SSLConf.SSLKeyPath != "" &&
+		postgresDBConf.SSLConf.SSLRootCertPath != "" {
+		ssl = fmt.Sprintf(
+			"?sslmode=verify-full&sslcert=%s&sslkey=%s&sslrootcert=%s",
+			postgresDBConf.SSLConf.SSLCertPath,
+			postgresDBConf.SSLConf.SSLKeyPath,
+			postgresDBConf.SSLConf.SSLRootCertPath,
+		)
+	}
+	dsn += ssl
 
 	pool, err := sqlx.Open("postgres", dsn)
 	if err != nil {
